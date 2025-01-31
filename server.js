@@ -26,6 +26,16 @@ app.delete('/delete/:id', async(req,res) => {
     }
 })
 
+app.put('/update/:id', async(req,res) => {
+    try{
+        const {id} = req.params
+        await conn.query("select update_usuario($1, 'jorge','de agusto ferreira','jorginho@dograu.com','bread')", [id])
+    }
+    catch (err) {
+        console.error(err);
+    }
+})
+
 app.listen(port, () => { 
     console.log('funcionado')
 })
