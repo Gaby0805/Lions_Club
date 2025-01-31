@@ -1,1 +1,3 @@
-POST http://localhost:3220/create 
+
+# use a extensão do REST client para isso funcionar
+DELETE  http://localhost:3220/delete/1

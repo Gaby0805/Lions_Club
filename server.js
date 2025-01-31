@@ -14,6 +14,17 @@ app.post('/create',  async(req, res) => {
         res.status(500).send('erro ao criar')
     }
 })
+app.delete('/delete/:id', async(req,res) => {
+    try{
+        const { id } = req.params;
+        await conn.query("select delete_usuario($1)", [id])
+        res.status(204).send('funcioando')
+    }
+    catch (err){
+        console.error(err)
+        res.status(500).send('erro ao iniciar')
+    }
+})
 
 app.listen(port, () => { 
     console.log('funcionado')
