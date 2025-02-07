@@ -12,3 +12,5 @@ const conn = new Pool ({
 conn.connect().then(() => console.log('connect'))
 
 export default conn
+
+//não sei como faz//
